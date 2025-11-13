@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "express": "^5.1.0",
+    "kafkajs": "^2.2.4",
     "mongoose": "^8.19.3",
     "nodemon": "^3.1.11"
   }

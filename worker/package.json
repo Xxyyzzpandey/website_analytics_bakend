@@ -10,6 +10,7 @@
     "dev": "node index.js"
   },
   "dependencies": {
+    "kafka": "^0.2.3",
     "mongoose": "^8.19.3"
   }
 }
