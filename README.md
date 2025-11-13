@@ -11,27 +11,7 @@ report_service    	Exposes a /stats API to query aggregated analytics data from 
 
 Architecture Diagram
 
-+------------+       POST /event        +------------------+
-|   Browser  | -----------------------> | Ingestion Service |
-+------------+                          +------------------+
-                                              |
-                                              | Kafka (async queue)
-                                              v
-                                      +------------------+
-                                      | Processor Worker |
-                                      +------------------+
-                                              |
-                                              | MongoDB writes
-                                              v
-                                      +------------------+
-                                      |   MongoDB (DB)   |
-                                      +------------------+
-                                              ^
-                                              | Aggregation queries
-                                              |
-                                      +------------------+
-                                      | Reporting API    |
-                                      +------------------+
+[ Browser ]-----POST/event------>[ Ingestion API ] ---> [ Kafka Queue ] ---> [ Worker ]  --->  [ MongoDB ]---------->[ Reporting API ]
 
 
 Architecture Decision: Asynchronous Processing
